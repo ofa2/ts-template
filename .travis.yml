@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "8"
+
+script:
+  - npm run build
+
+before_deploy: 
+  - ls -la
+  - pwd
+  - cd dist
+
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    keep-history: true
+    target-branch: npm
+    github-token: $GITHUB_TRAVIS_CI_TOKEN
+    on:
+      tags: true
+
+  - provider: npm
+    skip_cleanup: true
+    email: "$NPM_EMAIL"
+    api_key: "$NPM_TOKEN"
+    on:
+      tags: true
