@@ -7,8 +7,6 @@ script:
 
 before_deploy: 
   - cd dist
-after_deploy:
-  - cd ..
 
 deploy:
   - provider: pages
