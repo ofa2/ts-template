@@ -6,8 +6,8 @@ script:
   - npm run build
 
 before_deploy: 
+  - cd dist || true
   - ls -la && pwd
-  - cd dist
 
 deploy:
   - provider: pages
