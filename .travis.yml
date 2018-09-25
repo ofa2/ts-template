@@ -7,6 +7,9 @@ script:
 
 before_deploy: 
   - cd dist
+after_deploy:
+  - cd ..
+  
 deploy:
   - provider: pages
     skip-cleanup: true
@@ -15,7 +18,7 @@ deploy:
     github-token: $GITHUB_TRAVIS_CI_TOKEN
     on:
       tags: true
-      
+
   - provider: npm
     skip_cleanup: true
     email: "$NPM_EMAIL"

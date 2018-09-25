@@ -1,6 +1,6 @@
 {
   "name": "@ofa2/ts-template",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {

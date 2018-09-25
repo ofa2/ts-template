@@ -49,7 +49,7 @@ function exportConfig(gulp, $) {
     },
 
     cp: {
-      src: ['package.json'],
+      src: ['package.json', '.gitignore'],
       opt: {
         cwd: './',
         base: './',
