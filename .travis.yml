@@ -15,3 +15,9 @@ deploy:
     on:
       tags: true
     
+  - provider: pages
+    skip-cleanup: true
+    keep-history: true
+    target-branch: npm
+    github-token: $GITHUB_TRAVIS_CI_TOKEN
+    
