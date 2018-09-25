@@ -10,6 +10,12 @@ before_deploy:
   - pwd
   - cd dist
 
+after_deploy:
+  - pwd
+  - cd ..
+  - pwd
+  - ls -la
+
 deploy:
   - provider: pages
     skip-cleanup: true
