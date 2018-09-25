@@ -9,13 +9,14 @@ before_deploy:
   - cd dist
 after_deploy:
   - cd ..
-  
+
 deploy:
   - provider: pages
     skip-cleanup: true
     keep-history: true
     target-branch: npm
     github-token: $GITHUB_TRAVIS_CI_TOKEN
+    local-dir: dist
     on:
       tags: true
 
