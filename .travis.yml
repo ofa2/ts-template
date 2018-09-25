@@ -5,13 +5,17 @@ node_js:
 script:
   - npm run build
 
+before_deploy: 
+  - ls -la
+  - pwd
+  - cd dist
+
 deploy:
   - provider: pages
     skip-cleanup: true
     keep-history: true
     target-branch: npm
     github-token: $GITHUB_TRAVIS_CI_TOKEN
-    local-dir: dist
     on:
       tags: true
 
