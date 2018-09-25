@@ -6,15 +6,7 @@ script:
   - npm run build
 
 before_deploy: 
-  - ls -la
-  - pwd
   - cd dist
-
-after_deploy:
-  - pwd
-  - cd ..
-  - pwd
-  - ls -la
 
 deploy:
   - provider: pages
@@ -22,6 +14,7 @@ deploy:
     keep-history: true
     target-branch: npm
     github-token: $GITHUB_TRAVIS_CI_TOKEN
+    local-dir: dist
     on:
       tags: true
 
