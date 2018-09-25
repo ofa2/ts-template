@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":["lift","config","console","log"],"mappings":";;;;;;;AAAe,SAASA,IAAT,CAAcC,MAAd,EAAsB;AACnC;AACAC,EAAAA,OAAO,CAACC,GAAR,CAAYF,MAAZ;AACD","sourcesContent":["export default function lift(config) {\n  // eslint-disable-next-line no-console\n  console.log(config);\n}\n"],"file":"index.js"}
