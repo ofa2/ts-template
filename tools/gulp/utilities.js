@@ -4,8 +4,9 @@
 const chalk = require('chalk');
 const notifier = require('node-notifier');
 const path = require('path');
+const { spawn } = require('child_process');
 
-const projectPath = path.resolve(__dirname, '../../') + '/';
+const projectPath = path.join(__dirname, '../../');
 
 const svc = {
   eslintReporter(result) {
@@ -55,6 +56,49 @@ const svc = {
     });
 
     return fmt;
+  },
+  defer() {
+    let resolve;
+    let reject;
+    let promise = new Promise((...param) => {
+      [resolve, reject] = param;
+    });
+    return {
+      resolve,
+      reject,
+      promise,
+    };
+  },
+  spawnDefer(option) {
+    let deferred = svc.defer();
+    if (!option) {
+      return deferred.reject(new Error('no option'));
+    }
+
+    if (option.platform) {
+      // eslint-disable-next-line no-param-reassign
+      option.cmd = process.platform === 'win32' ? `${option.cmd}.cmd` : option.cmd;
+    }
+    let opt = {
+      stdio: 'inherit',
+    };
+    // set ENV
+    let env = Object.create(process.env);
+    env.NODE_ENV = option.NODE_ENV || process.env.NODE_ENV || 'development';
+    opt.env = env;
+
+    let proc = spawn(option.cmd, option.arg, opt);
+    deferred.promise.proc = proc;
+    proc.on('error', (err) => {
+      logger.info(err);
+    });
+    proc.on('exit', (code) => {
+      if (code !== 0) {
+        return deferred.reject(code);
+      }
+      return deferred.resolve();
+    });
+    return deferred.promise;
   },
 };
 
