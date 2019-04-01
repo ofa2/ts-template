@@ -1,13 +1,13 @@
 {
   "name": "@ofa2/ts-template",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "start": "./node_modules/.bin/ts-node --project tsconfig.json --files src/index.ts",
+    "start": "./node_modules/.bin/ts-node --files src/index.ts",
     "lint": "gulp eslint",
     "lint-fix": "./node_modules/.bin/eslint src/**/*.ts --fix",
     "watch": "gulp",
@@ -19,15 +19,15 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@ofa2/eslint-config-ofa2": "^1.0.2",
-    "@types/node": "^10.12.18",
-    "del": "^3.0.0",
-    "eslint": "^5.10.0",
+    "@ofa2/eslint-config": "^2.0.0",
+    "@types/node": "^11.12.2",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "del": "^4.0.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "gulp": "4.0.0",
-    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-babel": "^8.0.0",
     "gulp-cached": "^1.1.1",
     "gulp-eslint": "^5.0.0",
     "gulp-filter": "^5.1.0",
@@ -39,9 +39,7 @@
     "node-notifier": "^5.3.0",
     "nodemon": "^1.18.9",
     "streamqueue": "^1.1.2",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
-    "typescript": "~3.1.6",
-    "typescript-eslint-parser": "^21.0.2"
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
   }
 }
