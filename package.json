@@ -1,6 +1,6 @@
 {
   "name": "@ofa2/ts-template",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
@@ -20,13 +20,13 @@
   },
   "devDependencies": {
     "@ofa2/eslint-config": "^2.0.0",
-    "@types/node": "^11.12.2",
-    "@typescript-eslint/eslint-plugin": "^1.5.0",
-    "del": "^4.0.0",
+    "@types/node": "^12.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "del": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "gulp": "4.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "gulp": "^4.0.2",
     "gulp-cached": "^1.1.1",
     "gulp-eslint": "^5.0.0",
     "gulp-filter": "^5.1.0",
@@ -36,9 +36,9 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^5.0.0",
     "node-notifier": "^5.3.0",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.0",
     "streamqueue": "^1.1.2",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.4000"
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
   }
 }
